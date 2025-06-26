@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercício 07</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    .nav-exercicios {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      font-size: 1.25rem;
+    }
+
+    .nav-exercicios a,
+    .nav-exercicios span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      background-color: white;
+      color: #4a90e2;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 172, 237, 0.3);
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      min-width: 140px;
+      border: 2px solid transparent;
+    }
+
+    .nav-exercicios a:hover,
+    .nav-exercicios a:focus {
+      background-color: #4a90e2;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 172, 237, 0.6);
+      outline: none;
+    }
+
+    .nav-exercicios span {
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    #produtos {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #produtos>div,
+    #produtos input {
+      width: 100%;
+    }
+
+    #produtos input.nome {
+      float: left;
+      width: 48%;
+      margin-right: 4%;
+    }
+
+    #produtos input.preco {
+      float: right;
+      width: 48%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="page-header" id="pageHeader">
+    <div class="header-content">
+      <h1>+PraTI & Codifica - Victor Soares / T2</h1>
+      <p>LISTA DE EXERCÍCIOS 02</p>
+    </div>
+  </header>
+
+  <nav class="nav-exercicios" aria-label="Navegação entre exercícios">
+    <a href="/index.html" aria-label="Próximo exercício">Início</a>
+    <a href="../exercicio06/index.html" aria-label="Próximo exercício">🠔 Anterior</a>
+    <a href="../exercicio08/index.html" aria-label="Próximo exercício">Próximo 🠖</a>
+  </nav>
+
+  <main class="conteudo">
+    <section class="exercicio" id="ex07">
+      <h2>Exercício 07: Mapeamento e Ordenação</h2>
+
+      <div id="produtos">
+        <div>
+          <input type="text" placeholder="Nome do produto" class="nome" />
+          <input type="number" placeholder="Preço do produto" class="preco" />
+        </div>
+        <div>
+          <input type="text" placeholder="Nome do produto" class="nome" />
+          <input type="number" placeholder="Preço do produto" class="preco" />
+        </div>
+        <div>
+          <input type="text" placeholder="Nome do produto" class="nome" />
+          <input type="number" placeholder="Preço do produto" class="preco" />
+        </div>
+      </div>
+
+      <div class="botoes">
+        <button onclick="ordenarProdutos()">Ordenar Produtos</button>
+        <button onclick="limparProdutos()">Limpar</button>
+      </div>
+
+      <script>
+        function limparProdutos() {
+          document.querySelectorAll(".nome, .preco").forEach(input => input.value = "");
+          document.getElementById('resultadoPreco').textContent = '';
+        }
+      </script>
+
+      <div class="resultado" id="resultadoOrdenacao"></div>
+    </section>
+
+    <script src="exercicio07.js"></script>
+  </main>
+
+  <footer class="footer">
+    <p>Desenvolvido por Victor Soares</p>
+    <div class="social-icons">
+      <a href="https://github.com/vsoares99" target="_blank" aria-label="GitHub">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/victorsoares99/" target="_blank" aria-label="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+</body>
+
+</html>
